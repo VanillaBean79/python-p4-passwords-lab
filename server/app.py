@@ -55,7 +55,7 @@ class CheckSession(Resource):
         
         if user_id:
             # If user_id exists, fetch the user from the database
-            user = User.query.get(user_id)
+            user = db.session.get(User, user_id)
             
             if user:
                 # Return the user data in JSON format
